@@ -1,17 +1,18 @@
-/* Transactions component styles */
+/* CSS for Transaction component */
+
 .transactions {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background-color: rgba(255, 255, 255, 0.9); /* Soft white background with transparency */
     color: black;
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 15px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 20px;
+    margin: 20px; /* Add margin around the component */
 }
 
 .transactions h2 {
-    font-size: 32px;
-    color: #ff69b4;
-    margin-bottom: 20px;
+    font-size: 32px; /* Larger font size for headings */
+    color: #ff69b4; /* Bright pink heading color */
+    margin-bottom: 20px; /* Add margin below heading for spacing */
 }
 
 .transaction-list {
@@ -20,7 +21,7 @@
 }
 
 .transaction-item {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Increase margin for better spacing between items */
     display: flex;
     align-items: center;
 }
@@ -29,21 +30,21 @@
     padding: 8px 12px;
     border-radius: 5px;
     font-weight: bold;
-    margin-right: 10px;
+}
+
+.pending {
+    background-color: #ffc107; /* Yellow background for pending transactions */
+    color: #000; /* Black text color for pending transactions */
+    opacity: 0.7; /* Opacity for pending transaction text */
 }
 
 .transaction-details {
     flex-grow: 1;
-    padding-left: 16px;
+    margin-left: 10px;
 }
 
 .transaction-description {
     font-weight: bold;
-    margin-bottom: 5px; /* Add margin below description */
-}
-
-.transaction-date {
-    color: #666; /* Gray color for date */
 }
 
 .transaction-amount {
@@ -51,11 +52,11 @@
 }
 
 .deposit {
-    background-color: #87ceeb;
-    color: #ffffff;
+    background-color: #87ceeb; /* Blue background for deposit transactions */
+    color: #ffffff; /* White text color */
 }
 
 .withdrawal {
-    background-color: #ff69b4;
-    color: #ffffff;
+    background-color: #ff69b4; /* Pink background for withdrawal transactions */
+    color: #ffffff; /* White text color */
 }

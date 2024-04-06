@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {chores} from "./util/chores";
-import {bills} from "./util/bills"
+import { chores } from "./util/chores";
+import { bills } from "./util/bills";
 
 const initialState = {
     availableBalance: 0,
-    transactionRecords: [],
+    completedTransactions: [],
+    pendingTransactions: [],
     monthlyBills: bills,
     chores
 };
@@ -17,7 +18,7 @@ const walletSlice = createSlice({
             state.availableBalance += action.payload;
         },
         recordTransaction: (state, action) => {
-            state.transactionRecords.push(action.payload);
+            state.completedTransactions.push(action.payload);
         },
         payMonthlyBill: (state, action) => {
             const { id, amount } = action.payload;
@@ -27,7 +28,7 @@ const walletSlice = createSlice({
                 state.availableBalance -= amount;
                 if (!bill.paid) {
                     bill.paid = true;
-                    state.transactionRecords.push({
+                    state.completedTransactions.push({
                         type: 'Bill Paid',
                         description: bill.name,
                         amount: amount,
@@ -38,20 +39,32 @@ const walletSlice = createSlice({
         },
         completeChore: (state, action) => {
             const { id, value } = action.payload;
-            const chore = state.chores.find(chore => chore.id === id);
-            if (chore && !chore.completed) {
-                chore.completed = true;
-                state.availableBalance += value; // Update available balance
-                state.transactionRecords.push({
-                    type: 'Chore Completed',
-                    description: chore.task,
-                    amount: value,
-                    transactionType: value > 0 ? 'deposit' : 'withdrawal'
-                });
+            const choreIndex = state.chores.findIndex(chore => chore.id === id);
+            if (choreIndex !== -1) {
+                const chore = state.chores[choreIndex];
+                if (!chore.completed) {
+                    chore.completed = true;
+                    state.pendingTransactions.push({
+                        id: chore.id,
+                        type: 'Chore Completed',
+                        description: chore.task,
+                        amount: value,
+                        transactionType: value > 0 ? 'deposit' : 'withdrawal'
+                    });
+                }
+            }
+        },
+        approveCompletedChore: (state, action) => {
+            const { id } = action.payload;
+            const choreIndex = state.pendingTransactions.findIndex(chore => chore.id === id);
+            if (choreIndex !== -1) {
+                const chore = state.pendingTransactions[choreIndex];
+                state.pendingTransactions.splice(choreIndex, 1);
+                state.completedTransactions.push(chore);
             }
         }
     },
 });
 
-export const { updateAvailableBalance, recordTransaction, payMonthlyBill, completeChore } = walletSlice.actions;
+export const { updateAvailableBalance, recordTransaction, payMonthlyBill, completeChore, approveCompletedChore } = walletSlice.actions;
 export default walletSlice.reducer;
