@@ -1,0 +1,66 @@
+.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 50px;
+    position: relative;
+}
+
+.task-checkbox {
+    flex: 0 0 30px;
+    position: relative;
+}
+
+.checkmark {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border: 2px solid #777;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.task-item.completed .checkmark {
+    background-color: #777;
+}
+
+.task-description {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.task-amount {
+    flex: 0 0 60px;
+}
+
+.task-item.completed {
+    opacity: 0.6; /* Adjust the opacity level as needed */
+}
+
+.task-item.completed .task-description {
+    text-decoration: line-through;
+}
+
+@media only screen and (max-width: 600px) {
+    .task-item {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .task-checkbox {
+        margin-bottom: 10px;
+    }
+
+    .task-description {
+        margin: 0;
+    }
+}

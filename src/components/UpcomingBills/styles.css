@@ -1,0 +1,62 @@
+.upcoming-bills {
+    background-color: rgba(255, 255, 255, 0.9); /* Soft white background with transparency */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px; /* Add margin around the component */
+}
+
+.upcoming-bills h2 {
+    font-size: 32px; /* Larger font size for headings */
+    color: #ff69b4; /* Bright pink heading color */
+    margin-bottom: 20px; /* Add margin below heading for spacing */
+}
+
+.bill-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bill-item {
+    margin-bottom: 15px; /* Increase margin for better spacing between items */
+}
+
+.bill-info {
+    background-color: #fff; /* White background for each bill item */
+    padding: 15px; /* Add padding to separate content */
+    border-radius: 10px; /* Rounded corners for bill item */
+}
+
+.bill-info.paid {
+    background-color: rgba(159, 159, 159, 0.43) !important;
+    text-decoration: line-through;
+}
+
+.bill-name {
+    font-weight: bold;
+}
+
+.bill-amount {
+    margin-left: auto; /* Push the amount to the right side */
+    font-weight: bold;
+}
+
+.bill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bill-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.days-until-due {
+    color: #666; /* Gray color for days until due */
+}
+
+.warning {
+    color: #ff0000; /* Red color for warning message */
+}

@@ -1,0 +1,61 @@
+/* Transactions component styles */
+.transactions {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    color: black;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.transactions h2 {
+    font-size: 32px;
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.transaction-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transaction-item {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.transaction-type {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.transaction-details {
+    flex-grow: 1;
+    padding-left: 16px;
+}
+
+.transaction-description {
+    font-weight: bold;
+    margin-bottom: 5px; /* Add margin below description */
+}
+
+.transaction-date {
+    color: #666; /* Gray color for date */
+}
+
+.transaction-amount {
+    font-weight: bold;
+}
+
+.deposit {
+    background-color: #87ceeb;
+    color: #ffffff;
+}
+
+.withdrawal {
+    background-color: #ff69b4;
+    color: #ffffff;
+}
