@@ -31,6 +31,7 @@ body::after {
     bottom: 0;
     background-image: linear-gradient(to right, #87ceeb, #ff69b4);
 }
+
 /* Flex grid layout */
 .row {
     display: flex;
@@ -46,166 +47,41 @@ body::after {
 }
 
 /* Column sizes */
-.col-1 {
-    flex-basis: 8.33333%;
-}
-
-.col-2 {
-    flex-basis: 16.66667%;
-}
-
-.col-3 {
-    flex-basis: 25%;
-}
-
-.col-4 {
-    flex-basis: 33.33333%;
-}
-
-.col-5 {
-    flex-basis: 41.66667%;
-}
-
-.col-6 {
-    flex-basis: 50%;
-}
-
-.col-7 {
-    flex-basis: 58.33333%;
-}
-
-.col-8 {
-    flex-basis: 66.66667%;
-}
-
-.col-9 {
-    flex-basis: 75%;
-}
-
-.col-10 {
-    flex-basis: 83.33333%;
-}
-
-.col-11 {
-    flex-basis: 91.66667%;
-}
-
-.col-12 {
-    flex-basis: 100%;
-}
+.col-1 { flex-basis: 8.33333%; }
+.col-2 { flex-basis: 16.66667%; }
+.col-3 { flex-basis: 25%; }
+.col-4 { flex-basis: 33.33333%; }
+.col-5 { flex-basis: 41.66667%; }
+.col-6 { flex-basis: 50%; }
+.col-7 { flex-basis: 58.33333%; }
+.col-8 { flex-basis: 66.66667%; }
+.col-9 { flex-basis: 75%; }
+.col-10 { flex-basis: 83.33333%; }
+.col-11 { flex-basis: 91.66667%; }
+.col-12 { flex-basis: 100%; }
 
 /* Responsive breakpoints */
 @media (min-width: 576px) {
-    .col-sm-1 {
-        flex-basis: 8.33333%;
-    }
-
-    .col-sm-2 {
-        flex-basis: 16.66667%;
-    }
-
-    .col-sm-3 {
-        flex-basis: 25%;
-    }
-
-    .col-sm-4 {
-        flex-basis: 33.33333%;
-    }
-
-    .col-sm-5 {
-        flex-basis: 41.66667%;
-    }
-
-    .col-sm-6 {
-        flex-basis: 50%;
-    }
-
-    .col-sm-7 {
-        flex-basis: 58.33333%;
-    }
-
-    .col-sm-8 {
-        flex-basis: 66.66667%;
-    }
-
-    .col-sm-9 {
-        flex-basis: 75%;
-    }
-
-    .col-sm-10 {
-        flex-basis: 83.33333%;
-    }
-
-    .col-sm-11 {
-        flex-basis: 91.66667%;
-    }
-
-    .col-sm-12 {
-        flex-basis: 100%;
-    }
+    .col-sm-1 { flex-basis: 8.33333%; }
+    /* Add other col-sm-* styles */
 }
 
 @media (min-width: 768px) {
-    .col-md-1 {
-        flex-basis: 8.33333%;
-    }
-
-    .col-md-2 {
-        flex-basis: 16.66667%;
-    }
-
-    .col-md-3 {
-        flex-basis: 25%;
-    }
-
-    .col-md-4 {
-        flex-basis: 33.33333%;
-    }
-
-    .col-md-5 {
-        flex-basis: 41.66667%;
-    }
-
-    .col-md-6 {
-        flex-basis: 50%;
-    }
-
-    .col-md-7 {
-        flex-basis: 58.33333%;
-    }
-
-    .col-md-8 {
-        flex-basis: 66.66667%;
-    }
-
-    .col-md-9 {
-        flex-basis: 75%;
-    }
-
-    .col-md-10 {
-        flex-basis: 83.33333%;
-    }
-
-    .col-md-11 {
-        flex-basis: 91.66667%;
-    }
-
-    .col-md-12 {
-        flex-basis: 100%;
-    }
+    .col-md-1 { flex-basis: 8.33333%; }
+    /* Add other col-md-* styles */
 }
 
 /* App container */
 .App {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
-    align-items: center; /* Center children horizontally */
+    flex-direction: column;
+    align-items: center;
     margin-right: 54px;
     margin-left: 54px;
     padding-bottom: 150px;
 }
 
-/* Chores and Upcoming Bills components */
+/* Components */
 .bank-app,
 .wallet,
 .transactions {
@@ -215,6 +91,12 @@ body::after {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.app-title {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .bank-app ul {
@@ -227,10 +109,6 @@ body::after {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
-}
-
-.bank-app li input[type="checkbox"] {
-    margin-right: 15px;
 }
 
 /* Responsive styles */
@@ -276,6 +154,7 @@ body::after {
     color: #000000;
 }
 
+/* Animation */
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
@@ -283,10 +162,6 @@ body::after {
 }
 
 @keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }

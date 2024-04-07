@@ -1,14 +1,15 @@
 import React from "react";
 import ChoreItem from "./choreItem"; // Assuming ChoreItem is in the same directory
-import "./styles.css";
 import {useSelector} from "react-redux";
 
+import "./styles.css";
+
 function noMoreChores() {
-    return <div className="no-more-chores-container">No more chores available</div>
+    return <div className="no-more-chores-container">No more chores available!</div>
 }
 
 function ChoresTable() {
-    const chores = useSelector(state => state.wallet.chores);
+    const chores = useSelector(state => state.chores.list);
     const choreList = () => {
         if (chores.length > 0) {
             return (

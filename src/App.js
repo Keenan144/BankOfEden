@@ -10,7 +10,7 @@ import './App.css';
 function App() {
     return (
         <div className="App col-12">
-            <h1 style={{width: '100%', display: "block", textAlign: 'center'}}>Bank of Eden</h1>
+            <h1 className="app-title">Bank of Eden</h1>
             <div className="row">
                 <div className="col-8">
                     <Chores/>

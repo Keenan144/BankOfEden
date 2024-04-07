@@ -41,6 +41,11 @@
     font-weight: bold;
 }
 
+.bill-amount.alert {
+    font-weight: bold;
+    color: red;
+}
+
 .bill-header {
     display: flex;
     justify-content: space-between;
